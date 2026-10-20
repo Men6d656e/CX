@@ -1,0 +1,18 @@
+i have added the "vite_express_web" as the github submodule so this is the first repo where the code base lives, so there is 2 directries are there as well. so you job is now:
+
+in backend directry:
+build the backend using express(js only) and this backend follow the simple task just build the sample db file that has the sample data, and make the apis routes used module js syantax and used the proper standard of the files, directry organizations. make the model directry and there place dthe db sample file and used this as db source of truth, in teh routes define the routes, in the controller define the controllers.
+. make the basic simple login (in env add the email + password) and the endpoint just used extract the email + password from the request and match with the env variable and send the bcrypt generated hash in the response.
+.no need of register route.
+.use nodemon,
+. login and other routes must be seprated files as professional decipline.
+. make the post sample data + routes
+. the attributes are title,description,image(image must be small att he frontend side the small base64 url of the image will be send and the local db just stored this.)
+. backend server only crun on the posts + login feture only.
+
+in forontend
+. initlized the vite applications there and this will must have tailwind css installed + the login page + the post view page + create,delete,update.
+
+this complete app was the simple application that shows the single login + crud operation on the posts.
+
+Must create the Readme at the root of the "vite_express_web" directry. 

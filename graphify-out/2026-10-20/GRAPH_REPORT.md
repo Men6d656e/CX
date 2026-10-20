@@ -1,16 +1,16 @@
 # Graph Report - CX  (2026-10-20)
 
 ## Corpus Check
-- 17 files · ~11,487 words
+- 18 files · ~11,831 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 178 nodes · 161 edges · 18 communities (13 shown, 4 thin omitted)
+- 184 nodes · 166 edges · 19 communities (14 shown, 4 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e54bd690`
+- Built from commit: `22f750c7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -32,6 +32,7 @@
 - chat-history/INDEX.md
 - instructions/INDEX.md
 - tasks-history/INDEX.md
+- 1. What is Node.js?
 
 ## God Nodes (most connected - your core abstractions)
 1. `Hard Rule — This Is Not Optional` - 13 edges
@@ -48,7 +49,7 @@
 ## Surprising Connections (you probably didn't know these)
 - None detected - all connections are within the same source files.
 
-## Communities (18 total, 4 thin omitted)
+## Communities (19 total, 4 thin omitted)
 
 ### Community 0 - "Tasks-History Module — Instructions"
 Cohesion: 0.11
@@ -59,8 +60,8 @@ Cohesion: 0.11
 Nodes (17): Cross-Module Protection, Directory layout, Error Handling, Guide files — guides/<filename>.md, Guide metadata block, guides/INDEX.md, Guides Module — Instructions, INDEX.md maintenance — strict (+9 more)
 
 ### Community 2 - "Error Handling"
-Cohesion: 0.12
-Nodes (16): Cross-repo protection, Detection Criteria, Duplicate Detection (MANDATORY), Duplicate Detection Rules, Duplicate Detection Workflow, Error Handling, File Existence Check Workflow (MANDATORY — Hard Gate), Files That Must Be Checked (+8 more)
+Cohesion: 0.15
+Nodes (13): Detection Criteria, Duplicate Detection (MANDATORY), Duplicate Detection Rules, Duplicate Detection Workflow, Error Handling, File Existence Check Workflow (MANDATORY — Hard Gate), Files That Must Be Checked, Graphify-first file discovery (every instance) (+5 more)
 
 ### Community 3 - "Notes Module — Instructions"
 Cohesion: 0.12
@@ -79,8 +80,8 @@ Cohesion: 0.13
 Nodes (14): Adding a new utility, Cross-Module Protection, Directory layout, Error Handling, How to run a utility (mandatory), Naming conventions, Purpose, Relationship to other modules (+6 more)
 
 ### Community 7 - "Hard Rule — This Is Not Optional"
-Cohesion: 0.15
-Nodes (13): Cross-instance contamination, File references — mandatory verification before any work, Hard Rule — This Is Not Optional, How the agent chooses the instance (mandatory decision flow), Media — the user places it, not the agent, No guessing the user's intent about the instance, No inline-only answers, No silent fallback (+5 more)
+Cohesion: 0.12
+Nodes (16): Cross-instance contamination, Cross-repo protection, File references — mandatory verification before any work, Hard Rule — This Is Not Optional, How the agent chooses the instance (mandatory decision flow), Instance Module — Instructions, Media — the user places it, not the agent, No guessing the user's intent about the instance (+8 more)
 
 ### Community 8 - "Index Entry Rules — FORCED, applies to every INDEX.md"
 Cohesion: 0.22
@@ -102,25 +103,29 @@ Nodes (6): apps/ — code lives here, CX — Context Engine, Members, Modules, N
 Cohesion: 0.50
 Nodes (3): CX — Index, Flow, Modules
 
+### Community 18 - "1. What is Node.js?"
+Cohesion: 0.33
+Nodes (5): 1. What is Node.js?, Key facts, Simple mental model, What it's NOT, What it's used for
+
 ## Knowledge Gaps
-- **129 isolated node(s):** `The one diagram`, `Layers`, `Modules`, `Flow`, `Members` (+124 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 146 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **133 isolated node(s):** `The one diagram`, `Layers`, `Modules`, `Flow`, `Members` (+128 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 151 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Hard Rule — This Is Not Optional` connect `Hard Rule — This Is Not Optional` to `Error Handling`?**
-  _High betweenness centrality (0.017) - this node is a cross-community bridge._
-- **Why does `Instance Module — Instructions` connect `Error Handling` to `Hard Rule — This Is Not Optional`?**
-  _High betweenness centrality (0.016) - this node is a cross-community bridge._
+- **Why does `Error Handling` connect `Error Handling` to `Hard Rule — This Is Not Optional`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+- **Why does `Instance Module — Instructions` connect `Hard Rule — This Is Not Optional` to `Error Handling`?**
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
 - **What connects `The one diagram`, `Layers`, `Modules` to the rest of the system?**
-  _129 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _133 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Tasks-History Module — Instructions` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `Guides Module — Instructions` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
-- **Should `Error Handling` be split into smaller, more focused modules?**
-  _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
 - **Should `Notes Module — Instructions` be split into smaller, more focused modules?**
   _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
+- **Should `Chat-History Module — Instructions` be split into smaller, more focused modules?**
+  _Cohesion score 0.125 - nodes in this community are weakly interconnected._

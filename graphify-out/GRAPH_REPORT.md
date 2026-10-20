@@ -1,16 +1,16 @@
 # Graph Report - CX  (2026-10-20)
 
 ## Corpus Check
-- 18 files · ~11,831 words
+- 38 files · ~14,103 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 184 nodes · 166 edges · 19 communities (14 shown, 4 thin omitted)
-- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
+- 292 nodes · 326 edges · 25 communities (20 shown, 5 thin omitted)
+- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `22f750c7`
+- Built from commit: `f219544e`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -32,7 +32,14 @@
 - chat-history/INDEX.md
 - instructions/INDEX.md
 - tasks-history/INDEX.md
+- apps/README.md
 - 1. What is Node.js?
+- backend/package.json
+- PostsPage.jsx
+- frontend/package.json
+- postController.js
+- vite_express_web
+- 1. Build the vite_express_web app (backend + frontend + README)
 
 ## God Nodes (most connected - your core abstractions)
 1. `Hard Rule — This Is Not Optional` - 13 edges
@@ -43,13 +50,25 @@
 6. `Tasks-History Module — Instructions` - 10 edges
 7. `Utility Module — Instructions` - 9 edges
 8. `Index Entry Rules — FORCED, applies to every INDEX.md` - 8 edges
-9. `Workflow — 3rd instance (agent's own prompt interface)` - 7 edges
-10. `CX — Context Engine` - 6 edges
+9. `PostsPage()` - 7 edges
+10. `Workflow — 3rd instance (agent's own prompt interface)` - 7 edges
 
 ## Surprising Connections (you probably didn't know these)
-- None detected - all connections are within the same source files.
+- `listPosts()` --calls--> `getPosts()`  [EXTRACTED]
+  apps/vite_express_web/backend/src/controllers/postController.js → apps/vite_express_web/backend/src/models/db.js
+- `getPost()` --calls--> `getPostById()`  [EXTRACTED]
+  apps/vite_express_web/backend/src/controllers/postController.js → apps/vite_express_web/backend/src/models/db.js
+- `createPostHandler()` --calls--> `createPost()`  [EXTRACTED]
+  apps/vite_express_web/backend/src/controllers/postController.js → apps/vite_express_web/backend/src/models/db.js
+- `updatePostHandler()` --calls--> `updatePost()`  [EXTRACTED]
+  apps/vite_express_web/backend/src/controllers/postController.js → apps/vite_express_web/backend/src/models/db.js
+- `deletePostHandler()` --calls--> `deletePost()`  [EXTRACTED]
+  apps/vite_express_web/backend/src/controllers/postController.js → apps/vite_express_web/backend/src/models/db.js
 
-## Communities (19 total, 4 thin omitted)
+## Import Cycles
+- None detected.
+
+## Communities (25 total, 5 thin omitted)
 
 ### Community 0 - "Tasks-History Module — Instructions"
 Cohesion: 0.11
@@ -107,20 +126,44 @@ Nodes (3): CX — Index, Flow, Modules
 Cohesion: 0.33
 Nodes (5): 1. What is Node.js?, Key facts, Simple mental model, What it's NOT, What it's used for
 
+### Community 19 - "backend/package.json"
+Cohesion: 0.08
+Nodes (25): dependencies, bcryptjs, cors, dotenv, express, description, devDependencies, nodemon (+17 more)
+
+### Community 20 - "PostsPage.jsx"
+Cohesion: 0.14
+Nodes (19): createPost(), deletePost(), getPosts(), login(), request(), updatePost(), App(), LoginPage() (+11 more)
+
+### Community 21 - "frontend/package.json"
+Cohesion: 0.09
+Nodes (21): dependencies, react, react-dom, devDependencies, tailwindcss, @tailwindcss/vite, vite, @vitejs/plugin-react (+13 more)
+
+### Community 22 - "postController.js"
+Cohesion: 0.32
+Nodes (11): createPostHandler(), deletePostHandler(), getPost(), listPosts(), updatePostHandler(), createPost(), deletePost(), getPostById() (+3 more)
+
+### Community 23 - "vite_express_web"
+Cohesion: 0.33
+Nodes (5): Backend, Endpoints, Frontend, Layout, vite_express_web
+
+### Community 24 - "1. Build the vite_express_web app (backend + frontend + README)"
+Cohesion: 0.40
+Nodes (4): 1. Build the vite_express_web app (backend + frontend + README), Backend (`backend/`, Express + ES modules, nodemon), Frontend (`frontend/`, Vite + React + Tailwind v4), README
+
 ## Knowledge Gaps
-- **133 isolated node(s):** `The one diagram`, `Layers`, `Modules`, `Flow`, `Members` (+128 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 151 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **171 isolated node(s):** `name`, `version`, `description`, `type`, `main` (+166 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 193 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `Error Handling` connect `Error Handling` to `Hard Rule — This Is Not Optional`?**
+- **Why does `react` connect `PostsPage.jsx` to `frontend/package.json`?**
   _High betweenness centrality (0.015) - this node is a cross-community bridge._
-- **Why does `Instance Module — Instructions` connect `Hard Rule — This Is Not Optional` to `Error Handling`?**
-  _High betweenness centrality (0.015) - this node is a cross-community bridge._
-- **What connects `The one diagram`, `Layers`, `Modules` to the rest of the system?**
-  _133 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `express` connect `backend/package.json` to `postController.js`?**
+  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+- **What connects `name`, `version`, `description` to the rest of the system?**
+  _171 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Tasks-History Module — Instructions` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `Guides Module — Instructions` be split into smaller, more focused modules?**

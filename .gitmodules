@@ -1,0 +1,3 @@
+[submodule "apps/vite_express_web"]
+	path = apps/vite_express_web
+	url = https://github.com/Men6d656e/vite_express_web.git
