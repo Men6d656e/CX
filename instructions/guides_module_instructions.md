@@ -20,7 +20,7 @@ guides/
 
 - Use the guides module when the user asks you to **build/make/create/compile/
   write/draft/produce/save a guide** — for ANY topic, named or not (e.g.
-  "build me a guide for the FYP document set", "build the guide for the viva").
+  "build me a guide for the git basics", "build the guide for testing APIs").
 - The action + the word "guide" ALWAYS means: compile a guide file into the guides module.
 - The guide is built from existing chat-history Q/A files (1st instance), from
   task execution outputs (2nd/3rd instance), or from the topic the user names in

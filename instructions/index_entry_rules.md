@@ -2,7 +2,7 @@
 
 These rules apply to EVERY index file in this engine: `chat-history/INDEX.md`,
 `tasks-history/INDEX.md`, `guides/INDEX.md`, `notes/INDEX.md` (root and
-per-topic), `apps/INDEX.md`, and any future index.
+per-topic), and any future index.
 
 > These are FORCED rules. "Forced" means: there is NO mode, no instance, no
 > exception, no agent, no tool where these can be skipped. An agent that writes

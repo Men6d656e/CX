@@ -1,13 +1,16 @@
-# SYSTEM.md — <FYP-idea-NN> Context Engine
+# SYSTEM.md — CX Context Engine
 
 ## Identity
-This is the context engine for the FYP-idea project **<NAME>** (IDEA-NNN from
-[fyp-ideas](https://github.com/FYP-DESK/fyp-ideas)). It manages all project work,
-deliverables, decisions, progress, and the Q/A history behind every choice —
-readable by any agent, no database, nothing leaves the machine.
+This is the context engine for CX — a learning-development workspace shared by
+three members: **Abdullah, Akash, Behzad**. The purpose is to learn software
+development by building real codebases in `apps/` while keeping every
+discussion, decision, and task recorded. Readable by any agent, no database,
+nothing leaves the machine.
+
+Repo: https://github.com/Men6d656e/CX.git
 
 Core modules: `chat-history/`, `tasks-history/`, `notes/`, `guides/`,
-`contribution-history/`, `deliverables/`, `app/`, `utility/`, `instructions/`.
+`apps/`, `utility/`, `instructions/`.
 
 ## Startup — do this first in every session
 1. Read `INDEX.md` — it maps every module to its path and instruction file.
@@ -38,15 +41,6 @@ If any of these are missing, stop and report — do not proceed with guessed pat
 - Locate related files with `graphify query "<topic>"` BEFORE listing
   directories. Run `graphify update .` after changes, from the repo root only.
 
-### Contribution-history — FORCED for real work
-- Completing ANY real work item (proposal, PPT, 4 codebase-guidance docs,
-  codebase development, final documentation, final PPT) REQUIRES appending one
-  file to `contribution-history/` in the same turn. No contribution file = the
-  work is not recorded = it cannot be valued or paid.
-- Small questions/answers go through the instance flow only — never pollute
-  contribution-history with them.
-- Full rules: `instructions/contribution_history_instructions.md`.
-
 ## Rules
 - Never invent paths — take them from `INDEX.md`.
 - Never write rules inside `INDEX.md` — rules live in `instructions/`.
@@ -60,4 +54,4 @@ If any of these are missing, stop and report — do not proceed with guessed pat
 - History is append-only — never edit or delete existing Q/A or task files.
 - Every prompt resolves to one of the 3 instances (Q file → 1st, T file → 2nd,
   neither → 3rd). See `instructions/instance_module_instructions.md`.
-- Code lives only in `app/`, and `app/` holds exactly ONE idea's codebase.
+- Code lives only in `apps/`.

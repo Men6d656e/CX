@@ -106,8 +106,8 @@ exists. This includes the Q file itself and any media file it names.
 - Q file missing or empty → stop and reply with the error. Do not guess or invent
   questions. Do not create a Q file unless the user explicitly asked the agent to
   draft one.
-- User references another FYP-Desk repo (fyp-ideas, contribution-tracker-valueation, specilized-agents-skills-from-agency-agents) → read it read-only; never write inside another repo.
-- User references another FYP-Desk repo (fyp-ideas, contribution-tracker-valueation, specilized-agents-skills-from-agency-agents) → read it read-only; never write inside another repo.
+- User references a sibling repo or an app under `apps/` → read it read-only;
+  never write inside it (writes belong to THIS engine).
 - User enters a task through the agent's own prompt interface → that is the 3rd
   instance, NOT chat-history. Route it to `tasks_history_instructions.md`.
 - If the user references any other file by name ("see that file in abc repo",
@@ -133,8 +133,9 @@ prompt is or how "question-like" it sounds.
 - If another repo's files are referenced: read-only access only; never write to another repo's directories
 
 ## Cross-repo protection
-- **READ-ONLY access to sibling repos:** When reading another FYP-Desk repo (fyp-ideas, contribution-tracker-valueation, specilized-agents-skills-from-agency-agents), read files only. NEVER write inside another repo.
+- **READ-ONLY access to sibling repos:** When reading any other repo (a sibling
+  project or an app under `apps/`), read files only. NEVER write inside it.
 - **Write only to your own engine:** All writes (Q/A files, task files, indexes)
   happen in THIS engine's directories only.
-- **Reference, don't copy:** When another repo's info is needed, reference its files by path — do not duplicate or copy them.
-- **Reference, don't copy:** When another repo's info is needed, reference its files by path — do not duplicate or copy them.
+- **Reference, don't copy:** When another repo's info is needed, reference its
+  files by path — do not duplicate or copy them.

@@ -1,30 +1,39 @@
-# App Module — Instructions
+# Apps Module — Instructions
 
 ## Purpose
-`app/` holds the codebase for THIS project's idea. Different from the FYPCE
-engine pattern: there is no registry of many apps — this directory is exactly
-ONE codebase for exactly ONE idea.
+`apps/` holds the codebases for this engine. Each app is its own git repo,
+added under `apps/<repo-name>` as a **git submodule** with its own remote and
+commit history. This is the ONLY place in the engine where code lives.
 
 ## The one rule
-**One idea, one codebase, one directory.** If a second idea needs building, it
-gets its own repo (from the kit), its own context engine, its own `app/`.
-Never nest a second codebase here, never park scripts for other ideas here.
+**Code lives only in `apps/`, and every entry in `apps/` is its own repo.**
+The context engine repo never contains application source directly — it
+records the context (history, notes, guides, graph) around the code.
 
-## Directory layout (fill in as the codebase grows)
+## Directory layout
 ```
-app/
-├── README.md        ← the app's own doc: what it is, how to run it
-└── <codebase>       ← the actual project code (any stack the 4 docs specify)
+apps/
+├── README.md        ← lists every app: name, remote URL, purpose, how to run
+└── <repo-name>/     ← one git submodule per application
 ```
+
+## Adding an app
+1. `git submodule add <repo-url> apps/<repo-name>` from the repo root.
+2. Update `apps/README.md` with the app's name, remote URL, purpose, and how
+   to run it.
+3. Run `graphify update .` from the repo root so the graph indexes the new
+   code.
 
 ## Rules
-- The stack, architecture, and contracts come from
-  `deliverables/codebase-guidance/` (the 4 docs). The docs lead, the code
-  follows. Deviations require updating the 4 docs first, then the code.
-- Every code change is committed with a clear message; the contribution
-  record for `codebase-development` lists the relevant commits.
-- The graphify graph indexes this code automatically — `graphify update .`
-  from the repo root after significant changes (never inside `app/`).
+- Each app keeps its own repo, its own remote, and its own commit history —
+  commit inside the submodule, not into the engine repo.
+- The engine repo only tracks the submodule pointer (gitlink), never the
+  app's source files.
+- Work on an app's code is tracked as a task in `tasks-history/` like any
+  other task.
+- The graphify graph indexes the submodule code automatically —
+  `graphify update .` from the repo root after significant changes (never
+  inside a submodule).
 - No secrets in code. Environment variables live in `.env` (gitignored) and
-  are documented in `app/README.md`.
+  are documented in the app's own README.
 - `node_modules/`, build output, and caches are gitignored.

@@ -203,7 +203,9 @@ at the path implied by the prompt and the module wiring.
 
 This is a hard gate. No task starts without the referenced input being present.
 No answer is written without the referenced Q file being present. No media is
-used without the referenced media file being present.## Error Handling
+used without the referenced media file being present.
+
+## Error Handling
 
 ### Graphify-first file discovery (every instance)
 
@@ -211,24 +213,15 @@ Whatever the instance, target/related files are located with graphify BEFORE
 reading from the filesystem:
 
 1. Run `graphify query "<task topic>"` — the graph indexes this engine's Q/A,
-   T/E, guide, notes, AND app submodule code files.
+   T/E, guide, notes, AND apps/ submodule code files.
 2. Read the files the query surfaces. Directory listing / raw grep are fallbacks
    only (graphify unavailable, empty result, or after `graphify update .`).
-3. After the work, run `graphify update .` from the repo root root (never inside
-   the app submodule) to index the new files.
+3. After the work, run `graphify update .` from the repo root (never inside
+   an apps/ submodule) to index the new files.
 
 This is part of every instance workflow — see `graphify_instructions.md`.
 
-### File Existence Verification (MANDATORY — Hard Gate)
-
-**Before any work, create any file, or write anything into the context engine,
-the agent MUST verify that every file the user referenced actually exists.**
-
-This is a hard gate. No task starts without the referenced input being present.
-No answer is written without the referenced Q file being present. No media is
-used without the referenced media file being present.
-
-#### File Existence Check Workflow
+### File Existence Check Workflow (MANDATORY — Hard Gate)
 
 1. User references a file (Q, T, guide, index, media, anything) in the prompt
 2. Agent extracts ALL referenced files from the prompt
@@ -336,6 +329,7 @@ get duplicate work created, wasting tokens and creating confusion in INDEX.md.
 
 ## Cross-repo protection
 
-- **READ-ONLY access to sibling repos:** When reading another FYP-Desk repo (fyp-ideas, contribution-tracker-valueation, specilized-agents-skills-from-agency-agents), read files only. NEVER write inside another repo.
+- **READ-ONLY access to sibling repos:** When reading any other repo (a sibling
+  project or an app under `apps/`), read files only. NEVER write inside it.
 - **Write only to your own engine:** All writes (Q/A/T/E/tracker/log files, indexes)
   happen in THIS engine's directories only.

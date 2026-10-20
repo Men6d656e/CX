@@ -43,25 +43,25 @@ graphify query "<the task topic>"
   is exactly what graphify is for.
 - After the work is done, run `graphify update .` so the new files are indexed.
 
-## Apps submodule — how the graph handles app code (Option A: ONE engine graph)
+## Apps submodules — how the graph handles app code (Option A: ONE engine graph)
 
-`apps/fyp-service-app` is a git submodule (its own repo:
-`github.com/Akash-Mirza/fyp-service-page`). The graphify strategy is:
+Everything under `apps/` is a git submodule (its own repo, its own remote).
+The graphify strategy is:
 
 - **ONE graph for the whole engine.** `graphify-out/` lives at the repo root
-  and indexes EVERYTHING: context files (Q/A/T/E, guides, notes) AND the app
-  submodule's source files (HTML/CSS/JS).
+  and indexes EVERYTHING: context files (Q/A/T/E, guides, notes) AND every
+  app submodule's source files.
 - **No separate per-app graph.** Do not create `graphify-out/` inside
-  `apps/fyp-service-app/` — the submodule's files are already indexed by the
+  `apps/<repo-name>/` — the submodule's files are already indexed by the
   engine graph. If a per-app graph is ever wanted (for working on a standalone
-  clone of the repo), that is a future decision requiring a new rule here first.
-- **Run `graphify update .` from the repo root only** — never from inside the
+  clone of an app repo), that is a future decision requiring a new rule here first.
+- **Run `graphify update .` from the repo root only** — never from inside a
   submodule directory.
-- **Cross-links are the point:** a query like "navbar revision" surfaces BOTH
-  the app's code files AND the Q/A/T/E discussions behind them. Use this when
+- **Cross-links are the point:** a query about a feature surfaces BOTH the
+  app's code files AND the Q/A/T/E discussions behind them. Use this when
   working on app tasks: find the code and its context in one query.
-- App tasks (2nd/3rd instance) end with `graphify update .` from the repo root
-  root, so code changes made in the submodule are indexed too.
+- App tasks (2nd/3rd instance) end with `graphify update .` from the repo root,
+  so code changes made in the submodules are indexed too.
 
 ## Graphify Rules
 
@@ -96,9 +96,7 @@ that is the primary use case in this repo.
 - Graphify is a tool layer, not a context engine. It indexes files, not interactions.
 - Graphify output (graph.json, graph.html, GRAPH_REPORT.md) is READ-ONLY —
   agents read it, they never write graph files directly.
-- The `.opencode/` directory contains the graphify plugin and skill
-  (`SKILL.md`) — same setup as MCE and BCE.
-- Only run `graphify update .` from the repo root (never inside the submodule).
+- Only run `graphify update .` from the repo root (never inside a submodule).
 
 ## Error Handling
 

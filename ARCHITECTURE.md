@@ -1,4 +1,4 @@
-# ARCHITECTURE.md — <FYP-idea-NN>
+# ARCHITECTURE.md 
 
 ## The one diagram
 
@@ -12,13 +12,11 @@
             │  instructions/  ──rules govern──►  modules   │
             │        │                                     │
             │        ▼                                     │
-            │  contribution-history/ ──feed──►  valuation  │
-            │        ▲                          (org repo) │
-            │  deliverables/  app/  notes/  guides/        │
+            │                 apps/ notes/  guides/        │
             │        └──────────┬───────────────────────────│
             │                   ▼                          │
             │            graphify-out/graph.json           │
-            │        (ONE graph: context + app code)       │
+            │        (ONE graph: context + apps code)       │
             └──────────────────────────────────────────────┘
 ```
 
@@ -32,20 +30,6 @@
    every file to be registered with real metadata.
 3. **Knowledge layer** — `notes/` and `guides/` distill consultations and
    how-tos so nobody re-answers the same question.
-4. **Work layer** — `deliverables/` (documents) and `app/` (the single
-   codebase) hold the actual outputs. `app/` contains exactly one idea's
-   codebase — no second idea, no unrelated code.
-5. **Proof layer** — `contribution-history/` is append-only proof of real
-   work. Its `index.md` powers the org-wide `contribution-tracker-valueation`
-   valuation and pay split. Nothing else qualifies as proof.
-6. **Graph layer** — graphify indexes the context files AND `app/` code into
+4. **Work layer** — `apps/` 
+5. **Graph layer** — graphify indexes the context files AND `apps/` code into
    one graph, so `graphify query` finds related work before any file listing.
-
-## Cross-repo wiring (FYP Desk org)
-
-| Repo | This repo consumes | This repo produces |
-|------|--------------------|--------------------|
-| `fyp-ideas` | IDEA-NNN identity, selected idea | status updates via team lead |
-| `fyp-env-setup-development-team` | this kit (origin of the repo) | — |
-| `contribution-tracker-valueation` | — | contribution-history feed files |
-| `specilized-agents-skills-from-agency-agents` | specialist agent markdown via its `/api/agent` gateway | — |

@@ -1,4 +1,4 @@
-# dependencies & builds (uncomment in app/ when the stack is chosen)
+# dependencies & builds (uncomment in apps/<repo> when the stack is chosen)
 node_modules/
 dist/
 build/

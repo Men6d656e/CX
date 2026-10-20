@@ -58,8 +58,8 @@ exists. This includes the T file itself and any media file it names.
 6. Append one row per new file to `tasks-history/INDEX.md`
    (`| File | Type | Date | Model | Agent | Instance | Summary |`, Instance = 2,
    ALL fields filled per `index_entry_rules.md`).
-7. Run `graphify update .` from the repo root (app code changes in app/
-   submodule are indexed too).
+7. Run `graphify update .` from the repo root (code changes in `apps/`
+   submodules are indexed too).
 8. Tell the user where the execution file is.
 
 ## Workflow — 3rd instance (agent's own prompt interface)
@@ -186,6 +186,7 @@ chat-history/media. Do not start the task without the referenced media file.
   Do not invent a path or pull a file from chat-history/media instead.
 
 ## Cross-repo protection
-- **READ-ONLY access to sibling repos:** When reading another FYP-Desk repo (fyp-ideas, contribution-tracker-valueation, specilized-agents-skills-from-agency-agents), read files only. NEVER write inside another repo.
+- **READ-ONLY access to sibling repos:** When reading any other repo (a sibling
+  project or an app under `apps/`), read files only. NEVER write inside it.
 - **Write only to your own engine:** All writes (T/E/tracker/log files, indexes)
   happen in THIS engine's directories only.

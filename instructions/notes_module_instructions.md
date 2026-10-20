@@ -19,17 +19,17 @@ notes/
 - Use the notes module when the user says to **store notes**, **save notes**,
   or **make notes** about something discussed.
 - The AI decides the descriptive topic directory name based on what was discussed.
-- The user may specify the topic name explicitly (e.g. "store notes about the SRS").
+- The user may specify the topic name explicitly (e.g. "store notes about the REST API design").
 - Notes are written by the AI — never by the human.
 
 ## Naming conventions
 
 ### Topic directories — topics/<topic-name>/
-- Kebab-case lowercase: `fyp-documents`, `noir-zk`, `presentation-prep`.
+- Kebab-case lowercase: `rest-api`, `noir-zk`, `presentation-prep`.
 - 1 to 4 words max. Never reuse a name; if the topic exists, add notes to it.
 
 ### Note files
-- Kebab-case: `srs-terms.md`, `viva-checklist.md`.
+- Kebab-case: `rest-api-terms.md`, `testing-checklist.md`.
 - Metadata block at the top:
 
 ```
