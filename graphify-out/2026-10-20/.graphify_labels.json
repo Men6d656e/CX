@@ -23,5 +23,7 @@
   "21": "frontend/package.json",
   "22": "postController.js",
   "23": "vite_express_web",
-  "24": "1. Build the vite_express_web app (backend + frontend + README)"
+  "24": "1. Build the vite_express_web app (backend + frontend + README)",
+  "25": "dependencies",
+  "26": "1. Serve the built frontend from the backend at `/` (prod mode) + dev-mode split"
 }
