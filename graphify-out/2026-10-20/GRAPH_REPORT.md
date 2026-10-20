@@ -1,28 +1,28 @@
 # Graph Report - CX  (2026-10-20)
 
 ## Corpus Check
-- 39 files · ~14,557 words
+- 74 files · ~21,308 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 302 nodes · 335 edges · 27 communities (22 shown, 5 thin omitted)
-- Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.85)
+- 488 nodes · 614 edges · 38 communities (29 shown, 7 thin omitted)
+- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 23 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `15a7eca0`
+- Built from commit: `4efe3c41`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
 - Tasks-History Module — Instructions
 - Guides Module — Instructions
-- Error Handling
+- Hard Rule — This Is Not Optional
 - Notes Module — Instructions
 - Chat-History Module — Instructions
 - Graphify Module — Instructions
 - Utility Module — Instructions
-- Hard Rule — This Is Not Optional
+- vite_express_web_mongodb/backend/src/routes/postRoutes.js
 - Index Entry Rules — FORCED, applies to every INDEX.md
 - SYSTEM.md — CX Context Engine
 - Apps Module — Instructions
@@ -34,26 +34,35 @@
 - tasks-history/INDEX.md
 - apps/README.md
 - 1. What is Node.js?
-- backend/package.json
+- vite_express_web/backend/package.json
 - PostsPage.jsx
-- frontend/package.json
+- vite_express_web/frontend/package.json
 - postController.js
 - vite_express_web
 - 1. Build the vite_express_web app (backend + frontend + README)
-- dependencies
+- vite_express_web_mongodb/frontend/src/App.jsx
 - 1. Serve the built frontend from the backend at `/` (prod mode) + dev-mode split
+- vite_express_web_mongodb/frontend/src/api.js
+- vite_express_web_mongodb/backend/package.json
+- vite_express_web_mongodb/frontend/package.json
+- vite_express_web/backend/src/app.js
+- vite_express_web v1 — Everything about the project
+- vite_express_web_mongodb
+- 1. Fix EADDRINUSE + notes "vite express web v1" + build project 2 (MongoDB replica)
+- notes/INDEX.md
+- vite-express-web-v1/INDEX.md
 
 ## God Nodes (most connected - your core abstractions)
-1. `Hard Rule — This Is Not Optional` - 13 edges
-2. `Graphify Module — Instructions` - 11 edges
-3. `Notes Module — Instructions` - 11 edges
-4. `Chat-History Module — Instructions` - 10 edges
-5. `Guides Module — Instructions` - 10 edges
-6. `Tasks-History Module — Instructions` - 10 edges
-7. `Utility Module — Instructions` - 9 edges
-8. `Index Entry Rules — FORCED, applies to every INDEX.md` - 8 edges
-9. `PostsPage()` - 7 edges
-10. `Workflow — 3rd instance (agent's own prompt interface)` - 7 edges
+1. `request()` - 14 edges
+2. `useAuth()` - 13 edges
+3. `Hard Rule — This Is Not Optional` - 13 edges
+4. `react-router-dom` - 11 edges
+5. `Graphify Module — Instructions` - 11 edges
+6. `Notes Module — Instructions` - 11 edges
+7. `Chat-History Module — Instructions` - 10 edges
+8. `Guides Module — Instructions` - 10 edges
+9. `Tasks-History Module — Instructions` - 10 edges
+10. `Utility Module — Instructions` - 9 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `listPosts()` --calls--> `getPosts()`  [EXTRACTED]
@@ -70,7 +79,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (27 total, 5 thin omitted)
+## Communities (38 total, 7 thin omitted)
 
 ### Community 0 - "Tasks-History Module — Instructions"
 Cohesion: 0.11
@@ -80,9 +89,9 @@ Nodes (18): Append-only rule, Cross-repo protection, Directory layout, Error Han
 Cohesion: 0.11
 Nodes (17): Cross-Module Protection, Directory layout, Error Handling, Guide files — guides/<filename>.md, Guide metadata block, guides/INDEX.md, Guides Module — Instructions, INDEX.md maintenance — strict (+9 more)
 
-### Community 2 - "Error Handling"
-Cohesion: 0.12
-Nodes (16): Cross-repo protection, Detection Criteria, Duplicate Detection (MANDATORY), Duplicate Detection Rules, Duplicate Detection Workflow, Error Handling, File Existence Check Workflow (MANDATORY — Hard Gate), Files That Must Be Checked (+8 more)
+### Community 2 - "Hard Rule — This Is Not Optional"
+Cohesion: 0.07
+Nodes (29): Cross-instance contamination, Cross-repo protection, Detection Criteria, Duplicate Detection (MANDATORY), Duplicate Detection Rules, Duplicate Detection Workflow, Error Handling, File Existence Check Workflow (MANDATORY — Hard Gate) (+21 more)
 
 ### Community 3 - "Notes Module — Instructions"
 Cohesion: 0.12
@@ -100,9 +109,9 @@ Nodes (15): Apps submodules — how the graph handles app code (Option A: ONE en
 Cohesion: 0.13
 Nodes (14): Adding a new utility, Cross-Module Protection, Directory layout, Error Handling, How to run a utility (mandatory), Naming conventions, Purpose, Relationship to other modules (+6 more)
 
-### Community 7 - "Hard Rule — This Is Not Optional"
-Cohesion: 0.15
-Nodes (13): Cross-instance contamination, File references — mandatory verification before any work, Hard Rule — This Is Not Optional, How the agent chooses the instance (mandatory decision flow), Media — the user places it, not the agent, No guessing the user's intent about the instance, No inline-only answers, No silent fallback (+5 more)
+### Community 7 - "vite_express_web_mongodb/backend/src/routes/postRoutes.js"
+Cohesion: 0.09
+Nodes (33): app, __dirname, distPath, connectDb(), env, login(), logout(), me() (+25 more)
 
 ### Community 8 - "Index Entry Rules — FORCED, applies to every INDEX.md"
 Cohesion: 0.22
@@ -128,17 +137,17 @@ Nodes (3): CX — Index, Flow, Modules
 Cohesion: 0.33
 Nodes (5): 1. What is Node.js?, Key facts, Simple mental model, What it's NOT, What it's used for
 
-### Community 19 - "backend/package.json"
-Cohesion: 0.08
-Nodes (25): description, devDependencies, concurrently, nodemon, main, name, scripts, dev (+17 more)
+### Community 19 - "vite_express_web/backend/package.json"
+Cohesion: 0.09
+Nodes (22): dependencies, bcryptjs, cors, dotenv, express, description, devDependencies, concurrently (+14 more)
 
 ### Community 20 - "PostsPage.jsx"
 Cohesion: 0.14
-Nodes (19): createPost(), deletePost(), getPosts(), login(), request(), updatePost(), App(), LoginPage() (+11 more)
+Nodes (18): createPost(), deletePost(), getPosts(), login(), request(), updatePost(), App(), LoginPage() (+10 more)
 
-### Community 21 - "frontend/package.json"
+### Community 21 - "vite_express_web/frontend/package.json"
 Cohesion: 0.09
-Nodes (21): dependencies, react, react-dom, devDependencies, tailwindcss, @tailwindcss/vite, vite, @vitejs/plugin-react (+13 more)
+Nodes (22): dependencies, react, react-dom, devDependencies, tailwindcss, @tailwindcss/vite, vite, @vitejs/plugin-react (+14 more)
 
 ### Community 22 - "postController.js"
 Cohesion: 0.32
@@ -152,33 +161,61 @@ Nodes (5): Backend, Endpoints, Frontend, Layout, vite_express_web
 Cohesion: 0.40
 Nodes (4): 1. Build the vite_express_web app (backend + frontend + README), Backend (`backend/`, Express + ES modules, nodemon), Frontend (`frontend/`, Vite + React + Tailwind v4), README
 
-### Community 25 - "dependencies"
-Cohesion: 0.40
-Nodes (5): dependencies, bcryptjs, cors, dotenv, express
+### Community 25 - "vite_express_web_mongodb/frontend/src/App.jsx"
+Cohesion: 0.14
+Nodes (18): App(), apiHasToken(), AuthContext, AuthProvider(), login(), register(), useAuth(), Navbar() (+10 more)
 
 ### Community 26 - "1. Serve the built frontend from the backend at `/` (prod mode) + dev-mode split"
 Cohesion: 0.40
 Nodes (4): 1. Serve the built frontend from the backend at `/` (prod mode) + dev-mode split, Backend now serves the frontend, Scripts (`backend/package.json`), Verified
 
+### Community 27 - "vite_express_web_mongodb/frontend/src/api.js"
+Cohesion: 0.13
+Nodes (20): createPost(), deletePost(), dislikePost(), getMyPosts(), getPost(), getPosts(), likePost(), login() (+12 more)
+
+### Community 28 - "vite_express_web_mongodb/backend/package.json"
+Cohesion: 0.08
+Nodes (24): dependencies, bcryptjs, cookie-parser, dotenv, express, jsonwebtoken, mongoose, description (+16 more)
+
+### Community 29 - "vite_express_web_mongodb/frontend/package.json"
+Cohesion: 0.08
+Nodes (23): dependencies, react, react-dom, react-router-dom, devDependencies, tailwindcss, @tailwindcss/vite, vite (+15 more)
+
+### Community 30 - "vite_express_web/backend/src/app.js"
+Cohesion: 0.21
+Nodes (9): app, __dirname, distPath, env, login(), router, router, server (+1 more)
+
+### Community 31 - "vite_express_web v1 — Everything about the project"
+Cohesion: 0.14
+Nodes (13): 1. Architecture — describe it simply, 2. Data flow diagram, 3. High-level design + specifications, 4. Libraries used — and WHY this one, 5. Dev mode vs production mode, 6. Gotchas we hit (worth remembering), API endpoints, Frontend pages/components (+5 more)
+
+### Community 32 - "vite_express_web_mongodb"
+Cohesion: 0.29
+Nodes (6): API, Backend layout, Frontend layout, Security notes, Setup, vite_express_web_mongodb
+
+### Community 33 - "1. Fix EADDRINUSE + notes "vite express web v1" + build project 2 (MongoDB replica)"
+Cohesion: 0.40
+Nodes (4): 1. Fix EADDRINUSE + notes "vite express web v1" + build project 2 (MongoDB replica), Task 1a — EADDRINUSE fix (project 1), Task 1b — Notes "vite express web v1", Task 2 — `apps/vite_express_web_mongodb` (project 2)
+
 ## Knowledge Gaps
-- **179 isolated node(s):** `name`, `version`, `description`, `type`, `main` (+174 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 202 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **253 isolated node(s):** `name`, `version`, `description`, `type`, `main` (+248 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 290 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react` connect `PostsPage.jsx` to `frontend/package.json`?**
-  _High betweenness centrality (0.014) - this node is a cross-community bridge._
-- **Why does `express` connect `backend/package.json` to `postController.js`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
-- **Why does `Hard Rule — This Is Not Optional` connect `Hard Rule — This Is Not Optional` to `Error Handling`?**
-  _High betweenness centrality (0.006) - this node is a cross-community bridge._
+- **Why does `react-router-dom` connect `vite_express_web_mongodb/frontend/src/App.jsx` to `vite_express_web_mongodb/frontend/src/api.js`, `vite_express_web_mongodb/frontend/package.json`?**
+  _High betweenness centrality (0.012) - this node is a cross-community bridge._
+- **Why does `cors` connect `vite_express_web/backend/src/app.js` to `vite_express_web/backend/package.json`?**
+  _High betweenness centrality (0.005) - this node is a cross-community bridge._
+- **Why does `mongoose` connect `vite_express_web_mongodb/backend/src/routes/postRoutes.js` to `vite_express_web_mongodb/backend/package.json`?**
+  _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **What connects `name`, `version`, `description` to the rest of the system?**
-  _179 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _253 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Tasks-History Module — Instructions` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `Guides Module — Instructions` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
-- **Should `Error Handling` be split into smaller, more focused modules?**
-  _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
+- **Should `Hard Rule — This Is Not Optional` be split into smaller, more focused modules?**
+  _Cohesion score 0.06666666666666667 - nodes in this community are weakly interconnected._

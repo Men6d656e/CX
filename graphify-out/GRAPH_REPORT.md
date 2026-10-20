@@ -1,16 +1,16 @@
 # Graph Report - CX  (2026-10-20)
 
 ## Corpus Check
-- 74 files · ~21,308 words
+- 77 files · ~23,996 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 488 nodes · 614 edges · 38 communities (29 shown, 7 thin omitted)
+- 512 nodes · 635 edges · 40 communities (30 shown, 8 thin omitted)
 - Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 23 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `4efe3c41`
+- Built from commit: `21f47b60`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -37,7 +37,7 @@
 - vite_express_web/backend/package.json
 - PostsPage.jsx
 - vite_express_web/frontend/package.json
-- postController.js
+- vite_express_web/backend/src/controllers/postController.js
 - vite_express_web
 - 1. Build the vite_express_web app (backend + frontend + README)
 - vite_express_web_mongodb/frontend/src/App.jsx
@@ -45,12 +45,14 @@
 - vite_express_web_mongodb/frontend/src/api.js
 - vite_express_web_mongodb/backend/package.json
 - vite_express_web_mongodb/frontend/package.json
-- vite_express_web/backend/src/app.js
+- vite_express_web_mongodb v2 — Everything about the project
 - vite_express_web v1 — Everything about the project
 - vite_express_web_mongodb
 - 1. Fix EADDRINUSE + notes "vite express web v1" + build project 2 (MongoDB replica)
 - notes/INDEX.md
 - vite-express-web-v1/INDEX.md
+- 1. MongoDB URL in `.env` + missing update/delete features + V2 notes
+- vite-express-web-v2/INDEX.md
 
 ## God Nodes (most connected - your core abstractions)
 1. `request()` - 14 edges
@@ -79,7 +81,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (38 total, 7 thin omitted)
+## Communities (40 total, 8 thin omitted)
 
 ### Community 0 - "Tasks-History Module — Instructions"
 Cohesion: 0.11
@@ -149,9 +151,9 @@ Nodes (18): createPost(), deletePost(), getPosts(), login(), request(), updatePo
 Cohesion: 0.09
 Nodes (22): dependencies, react, react-dom, devDependencies, tailwindcss, @tailwindcss/vite, vite, @vitejs/plugin-react (+14 more)
 
-### Community 22 - "postController.js"
-Cohesion: 0.32
-Nodes (11): createPostHandler(), deletePostHandler(), getPost(), listPosts(), updatePostHandler(), createPost(), deletePost(), getPostById() (+3 more)
+### Community 22 - "vite_express_web/backend/src/controllers/postController.js"
+Cohesion: 0.13
+Nodes (20): app, __dirname, distPath, env, login(), createPostHandler(), deletePostHandler(), getPost() (+12 more)
 
 ### Community 23 - "vite_express_web"
 Cohesion: 0.33
@@ -162,16 +164,16 @@ Cohesion: 0.40
 Nodes (4): 1. Build the vite_express_web app (backend + frontend + README), Backend (`backend/`, Express + ES modules, nodemon), Frontend (`frontend/`, Vite + React + Tailwind v4), README
 
 ### Community 25 - "vite_express_web_mongodb/frontend/src/App.jsx"
-Cohesion: 0.14
-Nodes (18): App(), apiHasToken(), AuthContext, AuthProvider(), login(), register(), useAuth(), Navbar() (+10 more)
+Cohesion: 0.09
+Nodes (24): App(), apiHasToken(), AuthContext, AuthProvider(), login(), register(), useAuth(), Navbar() (+16 more)
 
 ### Community 26 - "1. Serve the built frontend from the backend at `/` (prod mode) + dev-mode split"
 Cohesion: 0.40
 Nodes (4): 1. Serve the built frontend from the backend at `/` (prod mode) + dev-mode split, Backend now serves the frontend, Scripts (`backend/package.json`), Verified
 
 ### Community 27 - "vite_express_web_mongodb/frontend/src/api.js"
-Cohesion: 0.13
-Nodes (20): createPost(), deletePost(), dislikePost(), getMyPosts(), getPost(), getPosts(), likePost(), login() (+12 more)
+Cohesion: 0.26
+Nodes (14): createPost(), deletePost(), dislikePost(), getMyPosts(), getPost(), getPosts(), likePost(), login() (+6 more)
 
 ### Community 28 - "vite_express_web_mongodb/backend/package.json"
 Cohesion: 0.08
@@ -181,9 +183,9 @@ Nodes (24): dependencies, bcryptjs, cookie-parser, dotenv, express, jsonwebtoken
 Cohesion: 0.08
 Nodes (23): dependencies, react, react-dom, react-router-dom, devDependencies, tailwindcss, @tailwindcss/vite, vite (+15 more)
 
-### Community 30 - "vite_express_web/backend/src/app.js"
-Cohesion: 0.21
-Nodes (9): app, __dirname, distPath, env, login(), router, router, server (+1 more)
+### Community 30 - "vite_express_web_mongodb v2 — Everything about the project"
+Cohesion: 0.13
+Nodes (14): 1. Architecture — describe it simply, 2. Data flow diagram, 3. High-level design + specifications, 4. Libraries used — and WHY this one, 5. Dev mode vs production mode, 6. Gotchas we hit (worth remembering), API endpoints, Frontend pages/components (+6 more)
 
 ### Community 31 - "vite_express_web v1 — Everything about the project"
 Cohesion: 0.14
@@ -197,22 +199,26 @@ Nodes (6): API, Backend layout, Frontend layout, Security notes, Setup, vite_exp
 Cohesion: 0.40
 Nodes (4): 1. Fix EADDRINUSE + notes "vite express web v1" + build project 2 (MongoDB replica), Task 1a — EADDRINUSE fix (project 1), Task 1b — Notes "vite express web v1", Task 2 — `apps/vite_express_web_mongodb` (project 2)
 
+### Community 38 - "1. MongoDB URL in `.env` + missing update/delete features + V2 notes"
+Cohesion: 0.33
+Nodes (5): 1. MongoDB URL in `.env` + missing update/delete features + V2 notes, Task 1a — `.env`, Task 1b — Why update/delete looked missing, Task 1c — Fixes made (in `apps/vite_express_web_mongodb`), Task 2 — Notes "vite express web mongodb V2"
+
 ## Knowledge Gaps
-- **253 isolated node(s):** `name`, `version`, `description`, `type`, `main` (+248 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 290 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
-- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **268 isolated node(s):** `name`, `version`, `description`, `type`, `main` (+263 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 309 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `react-router-dom` connect `vite_express_web_mongodb/frontend/src/App.jsx` to `vite_express_web_mongodb/frontend/src/api.js`, `vite_express_web_mongodb/frontend/package.json`?**
-  _High betweenness centrality (0.012) - this node is a cross-community bridge._
-- **Why does `cors` connect `vite_express_web/backend/src/app.js` to `vite_express_web/backend/package.json`?**
+- **Why does `react-router-dom` connect `vite_express_web_mongodb/frontend/src/App.jsx` to `vite_express_web_mongodb/frontend/package.json`?**
+  _High betweenness centrality (0.011) - this node is a cross-community bridge._
+- **Why does `cors` connect `vite_express_web/backend/src/controllers/postController.js` to `vite_express_web/backend/package.json`?**
   _High betweenness centrality (0.005) - this node is a cross-community bridge._
 - **Why does `mongoose` connect `vite_express_web_mongodb/backend/src/routes/postRoutes.js` to `vite_express_web_mongodb/backend/package.json`?**
   _High betweenness centrality (0.004) - this node is a cross-community bridge._
 - **What connects `name`, `version`, `description` to the rest of the system?**
-  _253 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _268 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Tasks-History Module — Instructions` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `Guides Module — Instructions` be split into smaller, more focused modules?**

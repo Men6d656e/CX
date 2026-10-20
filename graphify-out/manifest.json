@@ -30,9 +30,9 @@
     "semantic_hash": ""
   },
   "chat-history/INDEX.md": {
-    "mtime": 1792497543.4262753,
-    "seen": 1792497551.9795449,
-    "ast_hash": "9e1204bf0bacc117d902cb737e2a0f4e",
+    "mtime": 1792499735.7830157,
+    "seen": 1792499748.5167716,
+    "ast_hash": "73c5eb0bfdf61ffc5840ee77adc072ab",
     "semantic_hash": ""
   },
   "instructions/INDEX.md": {
@@ -306,15 +306,15 @@
     "semantic_hash": ""
   },
   "apps/vite_express_web_mongodb/backend/src/models/Post.js": {
-    "mtime": 1792496963.6778867,
-    "seen": 1792497551.9794648,
+    "mtime": 1792498321.2017794,
+    "seen": 1792499748.5166633,
     "ast_hash": "bb3533a6ddc2ed5fb3345ce8afe6f7c3",
     "semantic_hash": ""
   },
   "apps/vite_express_web_mongodb/backend/src/models/User.js": {
-    "mtime": 1792496958.1158857,
-    "seen": 1792497551.9794672,
-    "ast_hash": "e65757cfdbe92797848c107f70423643",
+    "mtime": 1792499337.8925474,
+    "seen": 1792499748.5166667,
+    "ast_hash": "fcccc20c38e606449bd09e787dc1c143",
     "semantic_hash": ""
   },
   "apps/vite_express_web_mongodb/backend/src/routes/authRoutes.js": {
@@ -372,9 +372,9 @@
     "semantic_hash": ""
   },
   "apps/vite_express_web_mongodb/frontend/src/components/PostCard.jsx": {
-    "mtime": 1792497119.9046776,
-    "seen": 1792497551.9794903,
-    "ast_hash": "60987971e41d8292d079751c884859ce",
+    "mtime": 1792499328.4584427,
+    "seen": 1792499748.516702,
+    "ast_hash": "331399b99e512ac5f5a06b429e1243a1",
     "semantic_hash": ""
   },
   "apps/vite_express_web_mongodb/frontend/src/components/PostForm.jsx": {
@@ -408,9 +408,9 @@
     "semantic_hash": ""
   },
   "apps/vite_express_web_mongodb/frontend/src/pages/FeedPage.jsx": {
-    "mtime": 1792497175.457982,
-    "seen": 1792497551.9795046,
-    "ast_hash": "9eadd09077b2517d0127d275c6ac4985",
+    "mtime": 1792499337.0765383,
+    "seen": 1792499748.5167224,
+    "ast_hash": "53e3ec3672a0a46ff91bcb375ff8977c",
     "semantic_hash": ""
   },
   "apps/vite_express_web_mongodb/frontend/src/pages/LoginPage.jsx": {
@@ -462,9 +462,9 @@
     "semantic_hash": ""
   },
   "notes/INDEX.md": {
-    "mtime": 1792496708.0413547,
-    "seen": 1792497551.9796014,
-    "ast_hash": "18454c095a69913bcefaca8f07836e7e",
+    "mtime": 1792499737.4960353,
+    "seen": 1792499748.516845,
+    "ast_hash": "fb319d3f9ad2bf5fa49009433bed3eb0",
     "semantic_hash": ""
   },
   "notes/topics/vite-express-web-v1/INDEX.md": {
@@ -477,6 +477,30 @@
     "mtime": 1792496779.1305556,
     "seen": 1792497551.9796066,
     "ast_hash": "6fbc59ffb1b44801735382c06ed3f489",
+    "semantic_hash": ""
+  },
+  "chat-history/inputs/Q5.txt": {
+    "mtime": 1792499056.2148626,
+    "seen": 1792499748.5167887,
+    "ast_hash": "363e9f0a0ad93e5e30d9b9a62f6c202a",
+    "semantic_hash": ""
+  },
+  "chat-history/outputs/A5.md": {
+    "mtime": 1792499727.2919195,
+    "seen": 1792499748.5168061,
+    "ast_hash": "b45ab21c395703ffe9012fa1f438a973",
+    "semantic_hash": ""
+  },
+  "notes/topics/vite-express-web-v2/INDEX.md": {
+    "mtime": 1792499704.4916613,
+    "seen": 1792499748.5168552,
+    "ast_hash": "82a924189b41604f26cd3f0b9b9cb76f",
+    "semantic_hash": ""
+  },
+  "notes/topics/vite-express-web-v2/vite-express-web-v2.md": {
+    "mtime": 1792499702.9106433,
+    "seen": 1792499748.516858,
+    "ast_hash": "93515108ab2cf3dbd1ec840ea5b4bd76",
     "semantic_hash": ""
   }
 }
