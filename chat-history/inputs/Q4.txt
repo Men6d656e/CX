@@ -1,0 +1,46 @@
+akash@akash-Vostro-14-3468:/media/akash/programing/CX/apps/vite_express_web/backend$ npm run start
+npm notice run vite_express_web-backend@1.0.0 start
+npm notice run npm run build --prefix ../frontend && node src/server.js
+npm notice run vite_express_web-frontend@1.0.0 build
+npm notice run vite build
+vite v6.4.4 building for production...
+✓ 32 modules transformed.
+dist/index.html                   0.40 kB │ gzip:  0.27 kB
+dist/assets/index-Bs5GNhiH.css   10.78 kB │ gzip:  2.89 kB
+dist/assets/index-DE6VC_sg.js   149.03 kB │ gzip: 47.89 kB
+✓ built in 1.07s
+node:events:505
+    throw er; // Unhandled 'error' event
+    ^
+
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:2328:16)
+    at listenInCluster (node:net:2437:12)
+    at Server.listen (node:net:2562:7)
+    at app.listen (/media/akash/programing/CX/apps/vite_express_web/backend/node_modules/express/lib/application.js:635:24)
+    at file:///media/akash/programing/CX/apps/vite_express_web/backend/src/server.js:4:5
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+Emitted 'error' event on Server instance at:
+    at emitErrorNT (node:net:2416:8)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 4000
+}
+
+Node.js v24.21.0
+akash@akash-Vostro-14-3468:/media/akash/programing/CX/apps/vite_express_web/backend$ 
+
+=======================================================================================
+
+task 1: see the error above fix this and make the notes on topic "vite express web v1" and there make the md file that contain data flow diagram, high level design + specifications + the liberary used + answer the why as well why we used this one, "describe the architecture" and must used simple words and make sure  md file was telling every thing about this project we made, and used the mermaind syantax and diagrams mus ritch simple and clear.
+
+the 2ns task is: i have make the another submodule repo and there now job job is to make the replica of the 1st application there using same express vite tailwind css + this time used mongo db, na dmake the full login register system + used bcrypt and stored the token in the cookies in secure way + used bearear type token to revelidate the request and this time used proper moduler structure + add the env variable the mongodb uri, at the complete i will add there the url of db,
+
+so this time used proper standard bearear login,register machenesium + the like/dislike functionality as well, and user must see the others user posts, this time make the fontent a little bit ritch. and this time used page router in frontend.
+
+So again do the task 1 fix + make the notes 0-100 for the 1st project + make the 2nd project only no need to make the notes for the 2nd project for now. now ship it.
