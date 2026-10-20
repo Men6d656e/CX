@@ -24,15 +24,15 @@
     "semantic_hash": ""
   },
   "apps/README.md": {
-    "mtime": 1792490530.9243603,
-    "seen": 1792491747.8723922,
-    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "mtime": 1792494442.175109,
+    "seen": 1792494443.1661034,
+    "ast_hash": "7044253088560a9af7e0889527b80d6c",
     "semantic_hash": ""
   },
   "chat-history/INDEX.md": {
-    "mtime": 1792492780.352074,
-    "seen": 1792492798.5322022,
-    "ast_hash": "9a00f21855015995312ad46bb50413fa",
+    "mtime": 1792494399.1306837,
+    "seen": 1792494443.1661098,
+    "ast_hash": "1d7072081e4c0424e1148cf7e791ac80",
     "semantic_hash": ""
   },
   "instructions/INDEX.md": {
@@ -111,6 +111,138 @@
     "mtime": 1792492766.1282537,
     "seen": 1792492798.532208,
     "ast_hash": "75fc5bd59a3dcd1e04ba16af3aa40b7a",
+    "semantic_hash": ""
+  },
+  "apps/vite_express_web/backend/package.json": {
+    "mtime": 1792494317.083457,
+    "seen": 1792494443.1660466,
+    "ast_hash": "14bf3a58e070f4a63b0a87d723ae428a",
+    "semantic_hash": ""
+  },
+  "apps/vite_express_web/backend/src/app.js": {
+    "mtime": 1792494185.0538929,
+    "seen": 1792494443.166052,
+    "ast_hash": "a2db23552dc5f260a512471c48a7f025",
+    "semantic_hash": ""
+  },
+  "apps/vite_express_web/backend/src/config/env.js": {
+    "mtime": 1792494150.0300415,
+    "seen": 1792494443.166055,
+    "ast_hash": "e79c54cf8a479d7dc71beae8ea68084c",
+    "semantic_hash": ""
+  },
+  "apps/vite_express_web/backend/src/controllers/authController.js": {
+    "mtime": 1792494324.2044125,
+    "seen": 1792494443.1660578,
+    "ast_hash": "97a3ed4b721c7bf4117241cf4a99960c",
+    "semantic_hash": ""
+  },
+  "apps/vite_express_web/backend/src/controllers/postController.js": {
+    "mtime": 1792494177.0567343,
+    "seen": 1792494443.16606,
+    "ast_hash": "ff6f4310f251a2536a5a514d0aff2739",
+    "semantic_hash": ""
+  },
+  "apps/vite_express_web/backend/src/models/db.js": {
+    "mtime": 1792494157.2532523,
+    "seen": 1792494443.166062,
+    "ast_hash": "ea4383c6e94e7a9f94220ce87dfca363",
+    "semantic_hash": ""
+  },
+  "apps/vite_express_web/backend/src/routes/authRoutes.js": {
+    "mtime": 1792494178.1257567,
+    "seen": 1792494443.166064,
+    "ast_hash": "7eb9db6938353feffc850df1c50cd663",
+    "semantic_hash": ""
+  },
+  "apps/vite_express_web/backend/src/routes/postRoutes.js": {
+    "mtime": 1792494181.9098327,
+    "seen": 1792494443.166066,
+    "ast_hash": "d21f749607d31a1a23462dd20e4ca9b9",
+    "semantic_hash": ""
+  },
+  "apps/vite_express_web/backend/src/server.js": {
+    "mtime": 1792494186.6209214,
+    "seen": 1792494443.166068,
+    "ast_hash": "41917943837447bebff57f43ec0104a1",
+    "semantic_hash": ""
+  },
+  "apps/vite_express_web/frontend/package.json": {
+    "mtime": 1792494196.666089,
+    "seen": 1792494443.16607,
+    "ast_hash": "6e0ed91fec49a798cf1adbb17ab7a677",
+    "semantic_hash": ""
+  },
+  "apps/vite_express_web/frontend/src/App.jsx": {
+    "mtime": 1792494219.5413716,
+    "seen": 1792494443.166072,
+    "ast_hash": "0cd7b75c6063c045abd7cfc4f5f26408",
+    "semantic_hash": ""
+  },
+  "apps/vite_express_web/frontend/src/api.js": {
+    "mtime": 1792494210.3442736,
+    "seen": 1792494443.166074,
+    "ast_hash": "646515bfd41ef73c3856e8217178fd0d",
+    "semantic_hash": ""
+  },
+  "apps/vite_express_web/frontend/src/components/LoginPage.jsx": {
+    "mtime": 1792494228.8891702,
+    "seen": 1792494443.1660762,
+    "ast_hash": "3bc6f04a42dbd95d9f06e640e7f1df46",
+    "semantic_hash": ""
+  },
+  "apps/vite_express_web/frontend/src/components/PostCard.jsx": {
+    "mtime": 1792494251.381571,
+    "seen": 1792494443.166078,
+    "ast_hash": "72c85ae58249b595ecee0b12c62aa936",
+    "semantic_hash": ""
+  },
+  "apps/vite_express_web/frontend/src/components/PostForm.jsx": {
+    "mtime": 1792494263.264597,
+    "seen": 1792494443.1660802,
+    "ast_hash": "87ea6a102e6c5ccd372527e46862adfd",
+    "semantic_hash": ""
+  },
+  "apps/vite_express_web/frontend/src/components/PostsPage.jsx": {
+    "mtime": 1792494244.4635446,
+    "seen": 1792494443.1660821,
+    "ast_hash": "9989ed13c1329d4a92a4e024158178da",
+    "semantic_hash": ""
+  },
+  "apps/vite_express_web/frontend/src/main.jsx": {
+    "mtime": 1792494204.8032045,
+    "seen": 1792494443.166084,
+    "ast_hash": "89fe151564e32a66fc2328f0fc92c486",
+    "semantic_hash": ""
+  },
+  "apps/vite_express_web/frontend/vite.config.js": {
+    "mtime": 1792494198.4601161,
+    "seen": 1792494443.166086,
+    "ast_hash": "e6ed59519c1253fad55ef84a7c4e1caa",
+    "semantic_hash": ""
+  },
+  "apps/vite_express_web/README.md": {
+    "mtime": 1792494287.097576,
+    "seen": 1792494443.1661053,
+    "ast_hash": "c26a3a8fa0838f42a996c35cd477a2e9",
+    "semantic_hash": ""
+  },
+  "apps/vite_express_web/frontend/index.html": {
+    "mtime": 1792494204.6592028,
+    "seen": 1792494443.1661074,
+    "ast_hash": "a9194ea8d3fd23b5402fa2429a868453",
+    "semantic_hash": ""
+  },
+  "chat-history/inputs/Q2.txt": {
+    "mtime": 1792494057.7608182,
+    "seen": 1792494443.1661148,
+    "ast_hash": "c1d84d3fc5cb0bc4c8a9b39f985c9f50",
+    "semantic_hash": ""
+  },
+  "chat-history/outputs/A2.md": {
+    "mtime": 1792494398.9866855,
+    "seen": 1792494443.16612,
+    "ast_hash": "70a897bf46e255a383ebf0dae4dd2c5f",
     "semantic_hash": ""
   }
 }

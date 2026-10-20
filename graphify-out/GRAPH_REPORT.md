@@ -1,16 +1,16 @@
 # Graph Report - CX  (2026-10-20)
 
 ## Corpus Check
-- 38 files · ~14,103 words
+- 39 files · ~14,557 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 292 nodes · 326 edges · 25 communities (20 shown, 5 thin omitted)
+- 302 nodes · 335 edges · 27 communities (22 shown, 5 thin omitted)
 - Extraction: 98% EXTRACTED · 2% INFERRED · 0% AMBIGUOUS · INFERRED: 6 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f219544e`
+- Built from commit: `15a7eca0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -40,6 +40,8 @@
 - postController.js
 - vite_express_web
 - 1. Build the vite_express_web app (backend + frontend + README)
+- dependencies
+- 1. Serve the built frontend from the backend at `/` (prod mode) + dev-mode split
 
 ## God Nodes (most connected - your core abstractions)
 1. `Hard Rule — This Is Not Optional` - 13 edges
@@ -68,7 +70,7 @@
 ## Import Cycles
 - None detected.
 
-## Communities (25 total, 5 thin omitted)
+## Communities (27 total, 5 thin omitted)
 
 ### Community 0 - "Tasks-History Module — Instructions"
 Cohesion: 0.11
@@ -79,8 +81,8 @@ Cohesion: 0.11
 Nodes (17): Cross-Module Protection, Directory layout, Error Handling, Guide files — guides/<filename>.md, Guide metadata block, guides/INDEX.md, Guides Module — Instructions, INDEX.md maintenance — strict (+9 more)
 
 ### Community 2 - "Error Handling"
-Cohesion: 0.15
-Nodes (13): Detection Criteria, Duplicate Detection (MANDATORY), Duplicate Detection Rules, Duplicate Detection Workflow, Error Handling, File Existence Check Workflow (MANDATORY — Hard Gate), Files That Must Be Checked, Graphify-first file discovery (every instance) (+5 more)
+Cohesion: 0.12
+Nodes (16): Cross-repo protection, Detection Criteria, Duplicate Detection (MANDATORY), Duplicate Detection Rules, Duplicate Detection Workflow, Error Handling, File Existence Check Workflow (MANDATORY — Hard Gate), Files That Must Be Checked (+8 more)
 
 ### Community 3 - "Notes Module — Instructions"
 Cohesion: 0.12
@@ -99,8 +101,8 @@ Cohesion: 0.13
 Nodes (14): Adding a new utility, Cross-Module Protection, Directory layout, Error Handling, How to run a utility (mandatory), Naming conventions, Purpose, Relationship to other modules (+6 more)
 
 ### Community 7 - "Hard Rule — This Is Not Optional"
-Cohesion: 0.12
-Nodes (16): Cross-instance contamination, Cross-repo protection, File references — mandatory verification before any work, Hard Rule — This Is Not Optional, How the agent chooses the instance (mandatory decision flow), Instance Module — Instructions, Media — the user places it, not the agent, No guessing the user's intent about the instance (+8 more)
+Cohesion: 0.15
+Nodes (13): Cross-instance contamination, File references — mandatory verification before any work, Hard Rule — This Is Not Optional, How the agent chooses the instance (mandatory decision flow), Media — the user places it, not the agent, No guessing the user's intent about the instance, No inline-only answers, No silent fallback (+5 more)
 
 ### Community 8 - "Index Entry Rules — FORCED, applies to every INDEX.md"
 Cohesion: 0.22
@@ -128,7 +130,7 @@ Nodes (5): 1. What is Node.js?, Key facts, Simple mental model, What it's NOT, W
 
 ### Community 19 - "backend/package.json"
 Cohesion: 0.08
-Nodes (25): dependencies, bcryptjs, cors, dotenv, express, description, devDependencies, nodemon (+17 more)
+Nodes (25): description, devDependencies, concurrently, nodemon, main, name, scripts, dev (+17 more)
 
 ### Community 20 - "PostsPage.jsx"
 Cohesion: 0.14
@@ -150,25 +152,33 @@ Nodes (5): Backend, Endpoints, Frontend, Layout, vite_express_web
 Cohesion: 0.40
 Nodes (4): 1. Build the vite_express_web app (backend + frontend + README), Backend (`backend/`, Express + ES modules, nodemon), Frontend (`frontend/`, Vite + React + Tailwind v4), README
 
+### Community 25 - "dependencies"
+Cohesion: 0.40
+Nodes (5): dependencies, bcryptjs, cors, dotenv, express
+
+### Community 26 - "1. Serve the built frontend from the backend at `/` (prod mode) + dev-mode split"
+Cohesion: 0.40
+Nodes (4): 1. Serve the built frontend from the backend at `/` (prod mode) + dev-mode split, Backend now serves the frontend, Scripts (`backend/package.json`), Verified
+
 ## Knowledge Gaps
-- **171 isolated node(s):** `name`, `version`, `description`, `type`, `main` (+166 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 193 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+- **179 isolated node(s):** `name`, `version`, `description`, `type`, `main` (+174 more)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 202 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `react` connect `PostsPage.jsx` to `frontend/package.json`?**
-  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+  _High betweenness centrality (0.014) - this node is a cross-community bridge._
 - **Why does `express` connect `backend/package.json` to `postController.js`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+- **Why does `Hard Rule — This Is Not Optional` connect `Hard Rule — This Is Not Optional` to `Error Handling`?**
+  _High betweenness centrality (0.006) - this node is a cross-community bridge._
 - **What connects `name`, `version`, `description` to the rest of the system?**
-  _171 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _179 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Tasks-History Module — Instructions` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `Guides Module — Instructions` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
-- **Should `Notes Module — Instructions` be split into smaller, more focused modules?**
+- **Should `Error Handling` be split into smaller, more focused modules?**
   _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
-- **Should `Chat-History Module — Instructions` be split into smaller, more focused modules?**
-  _Cohesion score 0.125 - nodes in this community are weakly interconnected._
